@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %}My Library of Favorite Book - Deleting Books {%
+    endblock %} {% block head %} {{ super() }}
+    <!--  <style type="text/css">-->
+    <!--    .important { color: #336699; }-->
+    <!--  </style>-->
+    {% endblock %} {% block content %}
+    <form action="{{ url_for('delete') }}" method="POST" class="adding-books-form">
+            {{ delete_form.csrf_token }}
+            {{ delete_form.book_id_1.label }}(Required) - {{ delete_form.book_id_1(size=30) }}
+            {{ delete_form.book_id_2.label }}(optional) - {{ delete_form.book_id_2(size=30) }}
+            {{ delete_form.book_id_3.label }}(Optional) - {{ delete_form.book_id_3(size=30) }}
+        <button type="submit" class="btn btn-primary">Delete Books</button>
+        </form>
+    <div class="link-class">
+            <a href="{{ url_for('home') }}">Go to Home</a><br/><br/>
+        </div>
+    <div class="custom-footer">
+      <p>&copy; Copyright {{ year }} by <a href="#">Naseem Amin</a>.</p>
+    </div>
+    {% endblock %}

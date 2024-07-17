@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %}My Library of Favorite Book - Adding New Books {%
+    endblock %} {% block head %} {{ super() }}
+    <!--  <style type="text/css">-->
+    <!--    .important { color: #336699; }-->
+    <!--  </style>-->
+    {% endblock %} {% block content %}
+    <form action="{{ url_for('add') }}" method="POST" class="adding-books-form">
+            {{ form.csrf_token }}
+            {{ form.book_name.label }} {{ form.book_name(size=30) }}
+            {{ form.book_author.label }} {{ form.book_author(size=30) }}
+            {{ form.book_rating.label }} {{ form.book_rating(size=30) }}
+        <button type="submit" class="btn btn-primary">Add Books</button>
+        </form>
+    <div class="link-class">
+            <a href="{{ url_for('home') }}">Go to Home</a><br/><br/>
+        </div>
+    <div class="custom-footer">
+      <p>&copy; Copyright {{ year }} by <a href="#">Naseem Amin</a>.</p>
+    </div>
+    {% endblock %}

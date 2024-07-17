@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "flask-library-web-app"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^3.0.3"
+wtforms-validators = "^1.0.0"
+Flask-WTF = "^1.2.1"
+WTForms = "^3.1.2"
+Flask-SQLAlchemy = "^3.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block title %}My Library of Favorite Book - Home {%
+    endblock %} {% block head %} {{ super() }}
+    <!--  <style type="text/css">-->
+    <!--    .important { color: #336699; }-->
+    <!--  </style>-->
+    {% endblock %} {% block content %}
+    <div class="index-custom-head">
+        <h1>My Library</h1>
+    </div>
+    <div class="index-custom-main-content">
+        <div class="books-content">
+            {% if books %} {% for i in books %}
+            <ul>
+                <li>{{ i.title }} - {{ i.author }} - Rating: <a href="{{ url_for('edit_book_rating', book_id = i.id) }}">{{
+                    i.rating }}</a> - Book ID ({{ i.id }}) - <a href="{{ url_for('delete_a_single_book', book_id = i.id) }}">Click to
+                    Delete</a>
+                </li>
+            </ul>
+            {% endfor %} {% else %}
+            <h1>{{ important_msg }}</h1>
+            {% endif %}
+        </div>
+        <div class="add-new-book-class">
+            <a href="{{ url_for('add') }}">Add New Book</a> | <a href="{{ url_for('delete') }}">Delete Multiple Books</a>
+        </div>
+    </div>
+    <div class="custom-footer">
+        <p>&copy; Copyright {{ year }} by <a href="#">Naseem Amin</a>.</p>
+    </div>
+    {% endblock %}

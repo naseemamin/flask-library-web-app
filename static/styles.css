@@ -1,0 +1,48 @@
+body {
+    background-color: #fff8f3;
+  }
+   
+  .main-section {
+    margin: 3rem 0 0 0;
+    font-family: Sans-Serif;
+  }
+   
+  .custom-footer {
+    margin: 3rem 0 0 0;
+    text-align: center;
+  }
+   
+  .adding-books-form {
+    text-align: center;
+  }
+   
+  .index-custom-head {
+    text-align: center;
+  }
+   
+  .index-custom-main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+   
+  .books-content {
+    grid-column: 2 / 3;
+    justify-self: center;
+    margin-top: 3rem;
+  }
+   
+  .index-custom-main-content ul {
+    list-style-type: none;
+  }
+   
+  .add-new-book-class {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    justify-self: center;
+    margin-top: 1.5rem;
+  }
+   
+  .link-class {
+    text-align: center;
+    margin-top: 3rem;
+  }

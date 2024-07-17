@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %}My Library of Favorite Book - Edit A Rating of A Books {%
+    endblock %} {% block head %} {{ super() }}
+    <!--  <style type="text/css">-->
+    <!--    .important { color: #336699; }-->
+    <!--  </style>-->
+    {% endblock %} {% block content %}
+    <form action="{{ url_for('edit_book_rating', book_id=book_id) }}" method="POST" class="adding-books-form">
+            {{ edit_rating_form.csrf_token }}
+            {{ edit_rating_form.book_rating.label }} {{ edit_rating_form.book_rating(size=30) }}
+        <button type="submit" class="btn btn-primary">Change Rating</button>
+        </form>
+    <div class="link-class">
+            <a href="{{ url_for('home') }}">Go to Home</a><br/><br/>
+        </div>
+    <div class="custom-footer">
+      <p>&copy; Copyright {{ year }} by <a href="#">Naseem Amin</a>.</p>
+    </div>
+    {% endblock %}
