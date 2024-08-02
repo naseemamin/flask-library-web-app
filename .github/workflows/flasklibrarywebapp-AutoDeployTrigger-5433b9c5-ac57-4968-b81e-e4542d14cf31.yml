@@ -39,7 +39,7 @@ jobs:
           containerAppName: flasklibrarywebapp
           resourceGroup: flask-app
           imageToBuild: flasklibrarywebapp.azurecr.io/flasklibrarywebapp:${{ github.sha }}
-          _buildArgumentsKey_: |
-            _buildArgumentsValues_
-
+          targetPort: 5000
+          #_buildArgumentsKey_: |
+          #  _buildArgumentsValues_
 
